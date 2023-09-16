@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import UploadComponent from './components/UploadComponent';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const handleFileSelect = (file) => {
+        console.log(file);
+    };
+
+    return (
+        <div className="App">
+            <h1>FormatFusion</h1>
+            <p>
+                Welcome to FormatFusion, your go-to online tool for converting HEIC images to PNG format. 
+                With just a few clicks, transform your high-efficiency images into widely supported PNGs.
+            </p>
+            <UploadComponent onFileSelect={handleFileSelect} />
+            <p style={{marginTop: '20px', maxWidth: '600px'}}>
+                HEIC (High Efficiency Image Format) is popular due to its space-saving features, 
+                but it's not supported everywhere. FormatFusion bridges that gap, allowing you 
+                to enjoy the best of both worlds.
+            </p>
+        </div>
+    );
 }
 
 export default App;
